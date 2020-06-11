@@ -7,10 +7,8 @@ import br.com.blogdogbreedguide.exceptions.PostCannotBeNullException;
 import br.com.blogdogbreedguide.exceptions.PostNotFoundException;
 import br.com.blogdogbreedguide.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import javax.swing.*;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
