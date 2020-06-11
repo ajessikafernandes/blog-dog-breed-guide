@@ -8,6 +8,8 @@ Java 11.
 
 Maven.
 
+PostgreSQL.
+
 ### Montando ambiente:
 
 Baixar o projeto usando o comando git clone.
