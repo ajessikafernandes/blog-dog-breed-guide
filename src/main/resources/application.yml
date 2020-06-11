@@ -1,1 +1,25 @@
+info:
+  app:
+    name: blog-dog-breed-guide
+    description: Blog about dog breeds, result of the course "Spring Boot and integration in AWS Elastic Beanstalk"
+    version: v0.0.1
 
+server:
+   port: 4200
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dogbreedguide
+    username: postgres
+    password: pOS%EGr3s
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  properties:
+    hibernate:
+      jdbc:
+        lob:
+          nonon_contextual_creation: trueblog
