@@ -4,10 +4,14 @@ import br.com.blogdogbreedguide.entity.Post;
 import br.com.blogdogbreedguide.exceptions.IdCannotBeNullException;
 import br.com.blogdogbreedguide.exceptions.PostByIdNotFoundException;
 import br.com.blogdogbreedguide.exceptions.PostCannotBeNullException;
+import br.com.blogdogbreedguide.exceptions.PostNotFoundException;
 import br.com.blogdogbreedguide.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.swing.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -21,6 +25,14 @@ public class PostService {
         validatePostNotNull(post);
         repository.save(post);
         return true;
+    }
+
+    private List<Post> findAllPostList(){
+        List<Post> posts = repository.findAll();
+        if (posts.isEmpty()){
+            throw new PostNotFoundException("No post to show");
+        }
+        return posts;
     }
 
     public Optional<Post> findPostById(Long id) {
