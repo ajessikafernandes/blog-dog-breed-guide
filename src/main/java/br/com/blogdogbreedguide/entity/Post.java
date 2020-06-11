@@ -29,4 +29,7 @@ public class Post {
     @Lob
     private String text;
 
+    @NotNull
+    private String author;
+
 }
