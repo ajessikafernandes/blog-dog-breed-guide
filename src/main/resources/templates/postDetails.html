@@ -12,9 +12,8 @@
         <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
             <a href="/" role="button" style="color: black">Blog Dog Breed Guide</a>
         </span>
-        <a href="/newpost" class="btn btn-primary" role="button">New Post</a>
+        <a href="/newpost" class="btn btn-dark" role="button">New Post</a>
     </nav>
-
 </header>
 
 <main>
@@ -26,13 +25,11 @@
             </ol>
         </nav>
         <article>
-            <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span th:text="${post.title}"></span></h1>
+            <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px; font-family: 'Times New Roman';"><span th:text="${post.title}"></span></h1>
             <p class="card-subtitle mb-2 text-muted">
-                <i class="material-icons">person_outline</i>
                 <span th:text="${post.author}"></span>
                 <br>
-                <i class="material-icons">date_range</i>
-                <span th:text="${post.date}"></span>
+                <span th:text="${post.date}"></span> · <span th:text="${post.minRead}"></span> min read
             </p>
             <section>
                 <p class="card-text" style="margin-top: 40px;"><span th:utext="${post.text}"></span></p>
@@ -40,6 +37,5 @@
         </article>
     </div>
 </main>
-
 </body>
 </html>

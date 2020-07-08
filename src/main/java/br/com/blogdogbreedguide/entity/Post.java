@@ -22,7 +22,10 @@ public class Post {
     @NotNull
     private String title;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
+    @NotNull
+    private Integer minRead;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy.MM.dd")
     private LocalDate date;
 
     @NotNull

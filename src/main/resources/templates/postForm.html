@@ -35,6 +35,9 @@
                     <input type="text" class="form-control" name="title" placeholder="Title *">
                 </div>
                 <div class="form-group">
+                    <input type="text" class="form-control" name="minRead" placeholder="Minutes Read *">
+                </div>
+                <div class="form-group">
                     <input type="text" class="form-control" name="author" placeholder="Author *">
                 </div>
 
@@ -42,7 +45,7 @@
 
                 <small class="form-text text-muted">(*) Required fields</small>
 
-                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Post</button>
+                <button type="submit" class="btn btn-dark" style="margin-top: 10px;">Post</button>
                 <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancel</a>
             </form>
         </div>
@@ -53,7 +56,7 @@
     $('#summernote').summernote({
         placeholder: 'Texto *',
         tabsize: 2,
-        height: 300
+        height: 350
     });
 </script>
 
