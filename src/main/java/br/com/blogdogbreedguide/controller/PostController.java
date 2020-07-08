@@ -21,14 +21,9 @@ public class PostController {
     @Autowired
     PostService service;
 
-    @RequestMapping("")
-    public String initial(){
-        return "/posts";
-    }
-
     @RequestMapping("/")
     public String index(){
-        return "/posts";
+        return "index";
     }
 
     @RequestMapping(value="/posts", method= RequestMethod.GET)
