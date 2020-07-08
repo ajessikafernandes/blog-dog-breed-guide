@@ -1,6 +1,8 @@
 # Blog Sobre Guia de Raças de Cachorros
 
-Blog sobre raças de cães, resultado do curso "Spring Boot e integração no AWS Elastic Beanstalk"
+Blog sobre raças de cães, resultado do curso "Spring Boot e integração com Heroku"
+
+Link para acessar o blog: https://breed-guide-blog.herokuapp.com/
 
 ### Pré-requisitos
 
