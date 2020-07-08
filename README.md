@@ -2,15 +2,13 @@
 
 Blog sobre raças de cães, resultado do curso "Spring Boot e integração com Heroku"
 
-Link para acessar o blog: https://breed-guide-blog.herokuapp.com/
+Demo : [blog-dog-breed-guide](https://breed-guide-blog.herokuapp.com/)
 
-### Pré-requisitos
+# Pré-requisitos:
 
-Java 1.8.
-
-Maven.
-
-PostgreSQL.
+  - Java 1.8.
+  - PostgreSQL
+  - Maven
 
 ### Montando ambiente:
 
@@ -27,3 +25,4 @@ Para executar o projeto via terminal, use o comando :
 ```
 java -jar -Dspring.profiles.active=local target/blog-dog-breed-guide-0.0.1-SNAPSHOT.jar
 ```
+
