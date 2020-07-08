@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Blog Dog Breed Guide</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
+            <a href="/" role="button" style="color: black">Blog Dog Breed Guide</a>
+        </span>
+        <a href="/newpost" class="btn btn-primary" role="button">New Post</a>
+    </nav>
+</header>
+
+<section>
+    <div class="container"  style="width: 60%; padding-bottom: 30px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item active" aria-current="page">Posts</li>
+            </ol>
+        </nav>
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="post : ${posts}">
+            <div class="card-body">
+                <a th:href="@{/posts/{code}(code = ${post.id})}" class="card-link" style="text-decoration: none">
+                <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem; text-decoration: none">
+                    <span th:text="${post.author}"></span> /
+                    <span th:text="${post.date}"></span>
+                </p>
+                    <h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;">
+                        <span th:text="${post.title}"></span>
+                    </h4>
+                <p class="card-text" style="text-decoration: none">
+                    <span th:utext="${#strings.abbreviate(post.text,400)} "></span>
+                </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

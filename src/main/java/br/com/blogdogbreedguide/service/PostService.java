@@ -9,6 +9,7 @@ import br.com.blogdogbreedguide.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -25,21 +26,19 @@ public class PostService {
         return true;
     }
 
-    private List<Post> findAllPostList(){
+    public List<Post> findAllPostList(){
         List<Post> posts = repository.findAll();
-        if (posts.isEmpty()){
-            throw new PostNotFoundException("No post to show");
-        }
+//        Collections.sort(posts, Collections.reverseOrder());
         return posts;
     }
 
-    public Optional<Post> findPostById(Long id) {
+    public Post findPostById(Long id) {
         validatePostIdNotNull(id);
         Optional<Post> postIn = repository.findById(id);
         if (!postIn.isPresent()) {
             throw new PostByIdNotFoundException("Informed post id not found");
         }
-        return postIn;
+        return postIn.get();
     }
 
     private Boolean validatePostIdNotNull(Long id) {
