@@ -28,7 +28,9 @@ public class PostService {
 
     public List<Post> findAllPostList(){
         List<Post> posts = repository.findAll();
-//        Collections.sort(posts, Collections.reverseOrder());
+        if (!posts.isEmpty()){
+            Collections.reverse(posts);
+        }
         return posts;
     }
 
