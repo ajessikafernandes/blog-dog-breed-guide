@@ -4,7 +4,7 @@ Blog sobre raças de cães, resultado do curso "Spring Boot e integração no AW
 
 ### Pré-requisitos
 
-Java 11.
+Java 1.8.
 
 Maven.
 
