@@ -4,6 +4,9 @@
     <title>Blog Dog Breed Guide</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        p {color: black}
+    </style>
 </head>
 <body>
 
@@ -30,7 +33,7 @@
                         <span th:text="${post.title}"></span>
                     </h4>
                     <p class="card-text" style="text-decoration: none">
-                        <span th:utext="${#strings.abbreviate(post.text,300)} "></span>
+                        <span th:utext="${#strings.abbreviate(post.text,300)} " style="color: black"></span>
                     </p>
                     <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem; text-decoration: none">
                         <span th:text="${post.author}"></span>
