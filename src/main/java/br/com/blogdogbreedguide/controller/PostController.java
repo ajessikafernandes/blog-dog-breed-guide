@@ -23,7 +23,7 @@ public class PostController {
 
     @RequestMapping("/")
     public String index(){
-        return "index";
+        return "/posts";
     }
 
     @RequestMapping(value="/posts", method= RequestMethod.GET)
