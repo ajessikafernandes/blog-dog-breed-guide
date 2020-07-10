@@ -75,9 +75,7 @@
                     <h4 class="card-title" style="font-weight: bold; color: black;">Popular on Breed Guide</h4>
                     <hr>
                 </nav>
-                <div style="margin-top: 20px;" th:each="
-
-                 : ${posts}">
+                <div style="margin-top: 20px;" th:each="post : ${posts}">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-2">
@@ -108,41 +106,41 @@
     </div>
 </section>
 
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col">
-                    <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
-                    <br>
-                    <div class="card-body">
-                        <h3 class="card-title text-center" style="color: black; padding-top: 5px;">
-                            Welcome Back.
-                        </h3>
-                        <br>
-                        <div class="col text-center">
-                            <p class="card-text" style="text-decoration: none; text-align: center">
-                                Sign in to get personalized story
-                                <br>
-                                recommendations, follow authors and
-                                <br>
-                                topics you love, and interact with stories.
-                            </p>
-                            <br>
-                        </div>
-                        <div class="col text-center" style="border-color: black; border-inline: black">
-                            <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"
-                                    data-target="#emailModal" data-dismiss="modal">
-                                <span>Sig in with email</span>
-                            </button>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal fade" id="myModal" role="dialog">-->
+<!--    <div class="modal-dialog">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="row">-->
+<!--                <div class="col">-->
+<!--                    <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>-->
+<!--                    <br>-->
+<!--                    <div class="card-body">-->
+<!--                        <h3 class="card-title text-center" style="color: black; padding-top: 5px;">-->
+<!--                            Welcome Back.-->
+<!--                        </h3>-->
+<!--                        <br>-->
+<!--                        <div class="col text-center">-->
+<!--                            <p class="card-text" style="text-decoration: none; text-align: center">-->
+<!--                                Sign in to get personalized story-->
+<!--                                <br>-->
+<!--                                recommendations, follow authors and-->
+<!--                                <br>-->
+<!--                                topics you love, and interact with stories.-->
+<!--                            </p>-->
+<!--                            <br>-->
+<!--                        </div>-->
+<!--                        <div class="col text-center" style="border-color: black; border-inline: black">-->
+<!--                            <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"-->
+<!--                                    data-target="#emailModal" data-dismiss="modal">-->
+<!--                                <span>Sig in with email</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <br>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--<div class="modal fade" id="emailModal" role="dialog">-->
 <!--    <div class="modal-dialog">-->
