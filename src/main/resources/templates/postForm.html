@@ -32,16 +32,16 @@
             <th:block th:include="mensagemValidacao"></th:block>
             <form method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="title" placeholder="Title *">
+                    <input type="text" class="form-control" name="title" placeholder="Title *" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="minRead" placeholder="Minutes Read *">
+                    <input type="text" class="form-control" name="minRead" placeholder="Minutes Read *" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="author" placeholder="Author *">
+                    <input type="text" class="form-control" name="author" placeholder="Author *" required="required">
                 </div>
 
-                <textarea id="summernote" type="text" class="form-control" name="text" placeholder="Text *"></textarea>
+                <textarea id="summernote" type="text" class="form-control" name="text" placeholder="Text *" required="required"></textarea>
 
                 <small class="form-text text-muted">(*) Required fields</small>
 
