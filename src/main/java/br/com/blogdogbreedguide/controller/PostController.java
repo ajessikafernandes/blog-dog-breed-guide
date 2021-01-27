@@ -22,8 +22,11 @@ public class PostController {
     PostService service;
 
     @RequestMapping("/")
-    public String index(){
-        return "index";
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView("posts");
+        List<Post> posts = service.findAllPostList();
+        mv.addObject("posts", posts);
+        return mv;
     }
 
     @RequestMapping(value="/posts", method= RequestMethod.GET)

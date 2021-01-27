@@ -13,10 +13,22 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
-            <a href="/" role="button" style="color: black">Blog Dog Breed Guide</a>
-        </span>
+    <nav class="navbar">
+        <div class="container-fluid" style="width: 87%; padding-bottom: 30px;">
+            <div class="text-right">
+                <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
+                    <a href="/posts" role="button"
+                       style="color: black; text-decoration: none; font-family: 'Georgia'; font-size: larger">Breed Guide</a>
+                </span>
+            </div>
+            <div class="text-left">
+                <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"
+                        data-target="#myModal">
+                    <span>Sig in</span>
+                </button>
+                <a href="/newpost" class="btn btn-outline-dark" role="button">Get started</a>
+            </div>
+        </div>
     </nav>
 </header>
 
@@ -24,24 +36,23 @@
     <div class="container"  style="width: 70%;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-                <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
-                <li class="breadcrumb-item active" aria-current="page">New Post</li>
+                <li class="breadcrumb-item active" aria-current="page">Draft</li>
             </ol>
         </nav>
         <div>
             <th:block th:include="mensagemValidacao"></th:block>
             <form method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="title" placeholder="Title *">
+                    <input type="text" class="form-control" name="title" placeholder="Title" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="minRead" placeholder="Minutes Read *">
+                    <input type="text" class="form-control" name="minRead" placeholder="Minutes Read" required="required">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="author" placeholder="Author *">
+                    <input type="text" class="form-control" name="author" placeholder="Author" required="required">
                 </div>
 
-                <textarea id="summernote" type="text" class="form-control" name="text" placeholder="Text *"></textarea>
+                <textarea id="summernote" type="text" class="form-control" name="text" placeholder="Tell your story..." required="required"></textarea>
 
                 <small class="form-text text-muted">(*) Required fields</small>
 
@@ -51,6 +62,81 @@
         </div>
     </div>
 </section>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
+                    <br>
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: black; padding-top: 5px;">
+                            Welcome Back.
+                        </h3>
+                        <br>
+                        <div class="col text-center">
+                            <p class="card-text" style="text-decoration: none; text-align: center">
+                                Sign in to get personalized story
+                                <br>
+                                recommendations, follow authors and
+                                <br>
+                                topics you love, and interact with stories.
+                            </p>
+                            <br>
+                        </div>
+                        <div class="col text-center" style="border-color: black; border-inline: black">
+                            <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"
+                                    data-target="#emailModal" data-dismiss="modal">
+                                <span>Sig in with email</span>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="emailModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
+                    <br>
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: black; padding-top: 5px;">
+                            Sign up with email
+                        </h3>
+                        <br>
+                        <br>
+                        <div class="col text-center">
+                            <p class="card-text" style="text-decoration: none; text-align: center">
+                                Your email
+                            </p>
+                            <th:block th:include="mensagemValidacao"></th:block>
+                            <form method="user">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="mail" placeholder="mail" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password"  placeholder="password" required="required">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-dark" style="margin-top: 10px;">Continue</button>
+                            </form>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     $('#summernote').summernote({

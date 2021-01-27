@@ -3,46 +3,182 @@
 <head>
     <title>Blog Dog Breed Guide</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        p {
+            color: black
+        }
+    </style>
 </head>
 <body>
-
+<div class="alert alert-info fade show" role="alert">
+    <strong>Hello!</strong> it's a demo!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <header>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
-            <a href="/" role="button" style="color: black">Blog Dog Breed Guide</a>
-        </span>
-        <a href="/newpost" class="btn btn-dark" role="button">New Post</a>
+    <nav class="navbar">
+        <div class="container-fluid" style="width: 87%; padding-bottom: 30px;">
+            <div class="text-right">
+                <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
+                    <a href="/posts" role="button"
+                       style="color: black; text-decoration: none; font-family: 'Georgia'; font-size: larger">Breed Guide</a>
+                </span>
+            </div>
+            <div class="text-left">
+                <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"
+                        data-target="#myModal">
+                    <span>Sig in</span>
+                </button>
+                <a href="/newpost" class="btn btn-outline-dark" role="button">Get started</a>
+            </div>
+        </div>
     </nav>
 </header>
 
 <section>
-    <div class="container"  style="width: 60%; padding-bottom: 30px;">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-                <li class="breadcrumb-item active" aria-current="page">Posts</li>
-            </ol>
-        </nav>
-        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="post : ${posts}">
-            <div class="card-body">
-                <a th:href="@{/posts/{code}(code = ${post.id})}" class="card-link" style="text-decoration: none">
-                    <h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;">
-                        <span th:text="${post.title}"></span>
-                    </h4>
-                    <p class="card-text" style="text-decoration: none">
-                        <span th:utext="${#strings.abbreviate(post.text,300)} "></span>
-                    </p>
-                    <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem; text-decoration: none">
-                        <span th:text="${post.author}"></span>
-                        <br>
-                        <span th:text="${post.date}"></span> ·
-                        <span th:text="${post.minRead}"></span> min read <span class="glyphicon glyphicon-star"></span>
-                    </p>
-                </a>
+    <div class="container-fluid" style="width: 87%; padding-bottom: 30px;">
+        <div class="row">
+            <div class="col-sm-8">
+                <div th:each="post : ${posts}">
+                    <div class="card-body">
+                        <a th:href="@{/posts/{code}(code = ${post.id})}" class="card-link"
+                           style="text-decoration: none">
+                            <h5 class="card-title" style="font-weight: bold; color: black;">
+                                <span th:text="${post.title}"></span>
+                            </h5>
+                            <p class="card-text" style="text-decoration: none">
+                                <span th:utext="${#strings.abbreviate(post.text,300)} " style="color: black;"></span>
+                            </p>
+                            <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem; text-decoration: none">
+                                <span th:text="${post.author}"></span>
+                                <br>
+                                <span th:text="${post.date}"></span> ·
+                                <span th:text="${post.minRead}"></span> min read <span
+                                    class="glyphicon glyphicon-star"></span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <nav aria-label="breadcrumb">
+                    <h4 class="card-title" style="font-weight: bold; color: black;">Popular on Breed Guide</h4>
+                    <hr>
+                </nav>
+                <div style="margin-top: 20px;" th:each="post : ${posts}">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <h4 style="color: darkgray">
+                                    0<span th:text="${post.id}" style="color: darkgray"></span>
+                                </h4>
+                            </div>
+                            <div class="col-sm-10">
+                                <a th:href="@{/posts/{code}(code = ${post.id})}" class="card-link"
+                                   style="text-decoration: none">
+                                    <h6 class="card-subtitle" style="color: black; padding-bottom: 5px;">
+                                        <span th:text="${post.title}"></span>
+                                    </h6>
+                                    <p class="card-subtitle mb-2 text-muted"
+                                       style="font-size: 0.8rem; text-decoration: none">
+                                        <span th:text="${post.author}"></span>
+                                        <br>
+                                        <span th:text="${post.date}"></span> ·
+                                        <span th:text="${post.minRead}"></span> min read </span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
+                    <br>
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: black; padding-top: 5px;">
+                            Welcome Back.
+                        </h3>
+                        <br>
+                        <div class="col text-center">
+                            <p class="card-text" style="text-decoration: none; text-align: center">
+                                Sign in to get personalized story
+                                <br>
+                                recommendations, follow authors and
+                                <br>
+                                topics you love, and interact with stories.
+                            </p>
+                            <br>
+                        </div>
+                        <div class="col text-center" style="border-color: black; border-inline: black">
+                            <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"
+                                    data-target="#emailModal" data-dismiss="modal">
+                                <span>Sig in with email</span>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="emailModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
+                    <br>
+                    <div class="card-body">
+                        <h3 class="card-title text-center" style="color: black; padding-top: 5px;">
+                            Sign up with email
+                        </h3>
+                        <br>
+                        <br>
+                        <div class="col text-center">
+                            <p class="card-text" style="text-decoration: none; text-align: center">
+                                Your email
+                            </p>
+                            <th:block th:include="mensagemValidacao"></th:block>
+                            <form method="user">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="mail" placeholder="mail" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password"  placeholder="password" required="required">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-dark" style="margin-top: 10px;">Continue</button>
+                            </form>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

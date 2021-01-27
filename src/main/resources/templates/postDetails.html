@@ -8,22 +8,27 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
-            <a href="/" role="button" style="color: black">Blog Dog Breed Guide</a>
-        </span>
-        <a href="/newpost" class="btn btn-dark" role="button">New Post</a>
+    <nav class="navbar">
+        <div class="container-fluid" style="width: 87%; padding-bottom: 30px;">
+            <div class="text-right">
+                <span class="navbar-brand mb-0 h1" style="font-weight: bold;">
+                    <a href="/posts" role="button"
+                       style="color: black; text-decoration: none; font-family: 'Georgia'; font-size: larger">Breed Guide</a>
+                </span>
+            </div>
+            <div class="text-left">
+                <button type="button" class="btn btn-link" role="button" style="color: black; padding: 10px;" data-toggle="modal"
+                        data-target="#myModal">
+                    <span>Sig in</span>
+                </button>
+                <a href="/newpost" class="btn btn-outline-dark" role="button">Get started</a>
+            </div>
+        </div>
     </nav>
 </header>
 
 <main>
     <div class="container"  style="width: 60%;">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-                <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Post</li>
-            </ol>
-        </nav>
         <article>
             <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px; font-family: 'Times New Roman';"><span th:text="${post.title}"></span></h1>
             <p class="card-subtitle mb-2 text-muted">
